@@ -1,0 +1,52 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    height: 150px;
+    background-color: red;
+}
+
+nav {
+    height: 50px;
+    background-color: yellow;
+}
+
+section {
+    min-height: 400px;
+    background-color: blue;
+}
+
+footer {
+    min-height: 200px;
+    background-color: darkred;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.errorText {
+    color: red;
+}
+
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contactForm {
+}

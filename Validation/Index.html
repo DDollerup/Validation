@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation</title>
+    <meta charset="utf-8" />
+    <link href="Content/CSS/Main.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <header></header>
+        <nav>
+
+        </nav>
+        <section></section>
+        <footer>
+            <div id="contactForm">
+                <form id="contact_form">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="email">Email</label>
+                            </td>
+                            <td>
+                                <input type="email" name="email" id="contact_email" />
+                                <span class="errorText" id="contact_email_err"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="subject">Subject</label>
+                            </td>
+                            <td>
+                                <input type="text" name="subject" id="contact_subject" />
+                                <span class="errorText" id="contact_subject_err"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="message">Message</label>
+                            </td>
+                            <td>
+                                <textarea name="message" id="contact_message"></textarea>
+                                <span class="errorText" id="contact_message_err"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="button" value="Send!" id="contact_submit" onclick="onContactFormSubmit()" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </footer>
+    </div>
+
+    <!-- asdasd -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        function onContactFormSubmit() {
+            var emailField = $("#contact_email").val();
+            var subjectField = $("#contact_subject").val();
+            var messageField = $("#contact_message").val();
+
+            var emailValidated = false;
+            if (emailField.length > 0) {
+                emailValidated = true;
+            }
+            else {
+                $("#contact_email_err").text("Email must be filled.");
+            }
+
+
+            var subjectValidated = false;
+            if (subjectField.length > 0) {
+                subjectValidated = true;
+            }
+            else {
+                $("#contact_subject_err").text("Subject must be filled.");
+            }
+
+            // Message must be 50 characters.
+            var messageValidated = false;
+            if (messageField.length >= 50) {
+                messageValidated = true;
+            }
+            else {
+                $("#contact_message_err").text("Message must contain atleast 50 characters.");
+            }
+
+            if (emailValidated == true && subjectValidated == true && messageValidated == true) {
+                $("#contact_form").submit();
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
